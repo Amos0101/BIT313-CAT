@@ -1,0 +1,210 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.login-container {
+    width: 300px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.reset-container {
+    width: 300px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.forgot-container {
+    width: 350px;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.login-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.reset-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+.reset-container form {
+    display: flex;
+    flex-direction: column;
+}
+.forgot-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+.forgot-container label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+.reset-container label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.reset-container input[type="text"],
+.reset-container input[type="email"],
+.reset-container input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.forgot-container input[type="email"]{
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.forgot-container button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.reset-container button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+.reset-container button:hover {
+    background-color: #0056b3;
+}
+
+
+.login-container .register-link {
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+}
+
+.login-container .register-link a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.login-container .register-link a:hover {
+    text-decoration: underline;
+}
+.login-container a{
+    margin-bottom: 10px;
+    color:blue;
+    text-align:right;
+}
+.register-container{
+    width: 400px;
+    max-width: 600px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.register-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+ .register-container label {
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.register-container input[type="text"],
+.register-container input[type="email"],
+.register-container input[type="password"],
+.register-container input[type="date"]{
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+ .register-container button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.register-container input[type="submit"]:hover {
+    background-color: #218838;
+}
+ .register-container .login-link a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.register-container .login-link a:hover {
+    text-decoration: underline;
+}

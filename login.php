@@ -1,25 +1,24 @@
 <?php
-    require 'db.php'; // Include database connection
-    session_start();
+require 'db.php';
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+session_start();
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if($_SERVER['REQUEST_METHOD']==='POST'){
 
-        // Retrieve user from database
-        $sql = "SELECT * FROM users WHERE username = :username";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username' => $username]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-        // Verify password
-        if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
-            header("Location: upload.html"); // Redirect to upload page
-        } else {
-        echo "Invalid username or password.";
-        }
-    }
-?>
+    //check if the user is registered
+    $sql = "SELECT * FROM users WHERE username =:username";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['username'=>$username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    //password verification
+    if($user and password_verify($password,$user['password'])){
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username']= $user['username'];
+        header('Location:homepage.html'); 
+    }else
+        echo'Invalid username or password';
+}

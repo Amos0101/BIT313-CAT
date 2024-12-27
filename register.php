@@ -1,23 +1,22 @@
 <?php
-require 'db.php'; // Include database connection
+require 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $name = $_POST["name"];
-    $email = $_POST["email"];
+if($_SERVER['REQUEST_METHOD']==='POST'){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
+    $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
 
-    // Insert user into database
+    //INSERT USER INTO DATABASE
     $sql = "INSERT INTO users (name,email,username, password) VALUES (:name,:email,:username,:password)";
     $stmt = $pdo->prepare($sql);
-
+    
     try {
         $stmt->execute(['name' => $name,'email' => $email,'username' => $username, 'password' => $password]);
-        echo "Registration successful.";
-        header("Location: index.html"); // Redirect to login page
+        echo'Registered successfully';
+        header('Location: index.html');
+
     } catch (PDOException $e) {
-       echo "Error: " . $e->getMessage();
- }
+        echo"Error" .$e->getMessage();
+    }
 }
-?>
