@@ -18,14 +18,14 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     $user = $stmt->fetch();
 
     if($user){
-        $otp = rand(100000,9999999);
+        $otp = rand(100000,999999);
         
         $query2 = "UPDATE users SET otp_code = :otp WHERE email = :email";
         $stmt = $pdo-> prepare($query2);
 
         $stmt->execute(['otp'=>$otp,'email'=>$email]);
         $subject = 'password reset otp';
-        $message = 'your otp for password reset is: $otp';
+        $message = "your otp for password reset is: $otp";
 
         if(sendEmail($email,$subject,$message)){
             echo'otp send to your email';

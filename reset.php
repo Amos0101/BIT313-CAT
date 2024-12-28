@@ -15,7 +15,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     //otp verification
     $query = "SELECT id FROM users WHERE email = :email AND otp_code = :otp";
     $stmt = $pdo-> prepare($query);
-    $stmt->execute(['emial'=>$email,'otp'=>$otp]);
+    $stmt->bindParam('otp', $otp, PDO::PARAM_INT);
+    $stmt->execute(['email'=>$email,'otp'=>$otp]);
     $user = $stmt->fetch();
 
     if($user){
